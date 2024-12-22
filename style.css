@@ -7,7 +7,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: -apple-system, sans-serif;
-    transition: background 0.5s ease, color 0.5s ease;
+    /* transition: background 0.5s ease, color 0.5s ease; */
 }
 
 :root {
@@ -21,7 +21,7 @@
 
     /* Dark mode colors */
     --bg-color-dark: #0c111d;
-    --snd-bg-color-dark: #0C111D;
+    --snd-bg-color-dark: #0c111d;
     --text-color-dark: #ffffff;
     --main-color-dark: #007F73;
     --progress-color-dark: #007f73;
@@ -46,6 +46,7 @@ body.dark-mode {
     display: flex;
     align-items: center;
     padding: 0;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 .dark-mode-toggle img {
@@ -68,7 +69,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    transition: background 0.5s ease, color 0.5s ease;
+    transition: background all 0.5s ease, color 0.5s ease;
     
 }
 
@@ -125,12 +126,13 @@ body.dark-mode .logo:hover{
     margin-left: 4rem;
     font-weight: 700;
     position: relative;
+    text-decoration: none;
     transition: background 0.5s ease, color 0.5s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--text-color);
+    color: var(--main-color);
 }
 
 body.dark-mode .header {
@@ -139,7 +141,7 @@ body.dark-mode .header {
 }
 
 body.dark-mode .navbar a {
-    color: var(--main-color-dark);
+    color:var(--main-color-dark);
     transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -153,6 +155,11 @@ body.dark-mode .navbar a.active {
     color: var(--bg-color);
     cursor: pointer;
     display: none;
+    margin-left: 1rem;
+}
+
+body.dark-mode #menu-icon {
+    color: rgba(0, 127, 115);
 }
 
 
@@ -326,6 +333,8 @@ body.dark-mode .about-img img {
 
 /* Services Section */
 
+
+
 .services h2 {
     margin-bottom: 5rem;
 }
@@ -455,6 +464,10 @@ body.dark-mode .services-container .services-box:hover{
     transition: background 0.5s ease;
 }
 
+body.dark-mode .inner{
+    background: #0C111D;
+}
+
 
 .portfolio .heading {
     font-size: 6rem;
@@ -497,12 +510,16 @@ body.dark-mode .services-container .services-box:hover{
 .portfolio-layer {
     padding: 1rem;
     text-align: left;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(213, 253, 249, 0.9);
     position: absolute;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
     transition: background 0.3s ease;
+}
+
+body.dark-mode .portfolio-layer{
+    background: rgba(12, 17, 29,0.9);
 }
 
 .portfolio-layer h4 {
@@ -532,7 +549,11 @@ body.dark-mode .services-container .services-box:hover{
 }
 
 .portfolio-box:hover .portfolio-layer {
-    background: rgba(255, 255, 255, 1);
+    background:rgba(213, 253, 249, 0.9)
+}
+
+body.dark-mode .portfolio-box:hover .portfolio-layer {
+    background:rgba(12, 17, 29,1);
 }
 
 .portfolio-layer a:hover {
@@ -634,11 +655,10 @@ body.dark-mode .services-container .services-box:hover{
 /* Media Queries for responsive design */
 
 
-@media (min-width: 787px) and (max-width: 1012px) {
+@media (min-width: 787px) and (max-width: 1050px) {
     #menu-icon {
         display: inline-block;
     }
-
     .navbar {
         position: absolute;
         top: 100%;
@@ -647,9 +667,13 @@ body.dark-mode .services-container .services-box:hover{
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background: var(--main-color);
+        background: rgba(104, 151, 143,0.8);
         transition: all 0.5s ease;
         backdrop-filter: blur(10px);
+    }
+
+    body.dark .navbar{
+        background-color:rgba(12, 17, 29,0.8); ;
     }
 
     .navbar a {
@@ -740,11 +764,13 @@ body.dark-mode .services-container .services-box:hover{
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background: var(--main-color);
+        background: rgba(104, 151, 143,0.8);
         transition: all 0.5s ease;
         backdrop-filter: blur(10px);
     }
-
+    body.dark .navbar{
+        background-color:rgba(12, 17, 29,0.8); ;
+    }
     .navbar a {
         display: block;
         padding: 17px;
