@@ -100,6 +100,7 @@ section {
     transition: background 0.5s ease, color 0.5s ease;
 }
 
+
 .logo {
     font-size: 3rem;
     color: var(--bg-color);
@@ -672,7 +673,7 @@ body.dark-mode .portfolio-box:hover .portfolio-layer {
         backdrop-filter: blur(10px);
     }
 
-    body.dark .navbar{
+    body.dark-mode .navbar{
         background-color:rgba(12, 17, 29,0.8); ;
     }
 
@@ -768,7 +769,7 @@ body.dark-mode .portfolio-box:hover .portfolio-layer {
         transition: all 0.5s ease;
         backdrop-filter: blur(10px);
     }
-    body.dark .navbar{
+    body.dark-mode .navbar{
         background-color:rgba(12, 17, 29,0.8); ;
     }
     .navbar a {
